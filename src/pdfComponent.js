@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import jsPDF from "jspdf";
+import "./App.css";
 
 class PdfComponent extends Component {
   constructor(props) {
@@ -35,12 +36,13 @@ class PdfComponent extends Component {
       const uri = doc.output("bloburi");
       const out = (
         <iframe
+          class="iframe"
           name="song"
+          height={"700em"}
+          width={"500em"}
           title="PDF"
           frameBorder="0"
           align="middle"
-          width={600}
-          height={700}
           src={uri}
         />
       );
@@ -198,12 +200,11 @@ class PdfComponent extends Component {
         return {
           out: (
             <iframe
+              class="iframe"
               name="song"
               title="PDF"
               frameBorder="0"
               align="middle"
-              width={600}
-              height={700}
               src={uri}
             />
           ),

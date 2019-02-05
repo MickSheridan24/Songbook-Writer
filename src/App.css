@@ -11,6 +11,10 @@
   list-style-type: none;
   margin-top: 100px;
 }
+.iframe {
+  height: 900;
+  width: 600;
+}
 
 .Left-Box {
   background-color: #385286;
@@ -49,7 +53,6 @@
 .textarea {
   width: 400px;
   font-size: 12;
-
 }
 
 .Right-Box {

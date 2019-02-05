@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import FlexBox from "flexbox-react";
-//import fs from "fs";
 import PdfComponent from "./pdfComponent";
 
 export default class SongBook extends Component {
@@ -508,7 +507,7 @@ export default class SongBook extends Component {
   }
   getSelects() {
     let out = [];
-    console.log("THIS EXISTS");
+    // console.log("THIS EXISTS");
     for (let x = 1; x < this.state.book.length; x++) {
       console.log("TITLE" + this.state.book[x].song.title);
       out.push(<option value={x}>{this.state.book[x].song.title}</option>);
