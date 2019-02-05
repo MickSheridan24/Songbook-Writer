@@ -40,18 +40,23 @@ class PdfComponent extends Component {
           frameBorder="0"
           align="middle"
           width={600}
-          height={900}
+          height={700}
           src={uri}
         />
       );
 
-      this.setState({ doc, out });
+      this.setState({
+        doc,
+        out
+      });
     }
   }
   formatTitle(doc) {
     // ////console.log("TITLE " + this.state.title);
     // ////console.log("AUTHOR: " + this.state.author);
-    doc.setProperties({ title: this.state.title });
+    doc.setProperties({
+      title: this.state.title
+    });
     doc.setFont("courier");
     doc.setFontSize(this.props.lineLength + 4);
     doc.text(
@@ -86,7 +91,9 @@ class PdfComponent extends Component {
 
       doc.setFont("courier");
       doc.setFontSize(this.props.lineLength);
-      doc.setProperties({ title: "Song" });
+      doc.setProperties({
+        title: "Song"
+      });
 
       doc.text(10, 45, this.getDivSubsection(l, p1Lines));
       doc.addPage();
@@ -114,7 +121,10 @@ class PdfComponent extends Component {
     }
     if (!this.state.formatted) {
       let doc = this.checkPageLength();
-      this.setState({ formatted: true, doc: doc });
+      this.setState({
+        formatted: true,
+        doc: doc
+      });
     }
   }
   getDivSubsection(s, e) {
@@ -142,7 +152,7 @@ class PdfComponent extends Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    let load = <div>Changing...</div>;
+    let load = <div> Changing... </div>;
     let doc = prevState.doc;
 
     const uri = doc.output("bloburi");
@@ -153,7 +163,9 @@ class PdfComponent extends Component {
         doc = new jsPDF();
         doc.setFont("courier");
         doc.setFontSize(nextProps.lineLength + 4);
-        doc.setProperties({ title: nextProps.title });
+        doc.setProperties({
+          title: nextProps.title
+        });
         doc.text(
           nextProps.title ? nextProps.title : "New Song",
           100,
@@ -191,7 +203,7 @@ class PdfComponent extends Component {
               frameBorder="0"
               align="middle"
               width={600}
-              height={900}
+              height={700}
               src={uri}
             />
           ),
@@ -205,7 +217,7 @@ class PdfComponent extends Component {
   }
 
   render() {
-    return <div>{this.state.out}</div>;
+    return <div> {this.state.out} </div>;
   }
 }
 

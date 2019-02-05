@@ -166,7 +166,9 @@ export default class SongBook extends Component {
         x++;
       }
 
-      book.push({ song: { title: title, author: auth, inText: text } });
+      book.push({
+        song: { title: title, author: auth, inText: text, transpose: 0 }
+      });
 
       x++;
     }
@@ -530,7 +532,7 @@ export default class SongBook extends Component {
               <form onSubmit={this.handleSubmit} aligncontent="center">
                 <textarea
                   style={{ width: 400, fontSize: 12 }}
-                  rows="35"
+                  rows="30"
                   onChange={this.handleChange}
                   defaultValue={this.state.song.inText}
                 />
